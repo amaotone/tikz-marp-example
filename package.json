@@ -5,12 +5,16 @@
   "private": true,
   "scripts": {
     "tikz": "bash scripts/build-tikz.sh",
-    "dev": "pnpm tikz && marp --watch --html --input-dir slides/",
+    "dev:tikz": "chokidar 'tikz/**/*.tex' -c 'pnpm tikz'",
+    "dev:marp": "marp --watch --html --input-dir slides/",
+    "dev": "pnpm tikz && concurrently 'pnpm dev:tikz' 'pnpm dev:marp'",
     "build": "pnpm tikz && marp --html --input-dir slides/ --output dist/",
     "pdf": "pnpm tikz && marp --html --pdf --input-dir slides/ --output dist/"
   },
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {
-    "@marp-team/marp-cli": "^4.2.3"
+    "@marp-team/marp-cli": "^4.2.3",
+    "chokidar-cli": "^3.0.0",
+    "concurrently": "^9.2.1"
   }
 }
