@@ -1,0 +1,15 @@
+{
+  "name": "deck",
+  "version": "1.0.0",
+  "description": "Math lecture slides powered by Marp",
+  "private": true,
+  "scripts": {
+    "dev": "marp --watch --html --input-dir slides/",
+    "build": "marp --html --input-dir slides/ --output dist/",
+    "pdf": "marp --html --pdf --input-dir slides/ --output dist/"
+  },
+  "packageManager": "pnpm@10.13.1",
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.2.3"
+  }
+}
