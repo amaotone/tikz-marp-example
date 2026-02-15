@@ -4,9 +4,10 @@
   "description": "Math lecture slides powered by Marp",
   "private": true,
   "scripts": {
-    "dev": "marp --watch --html --input-dir slides/",
-    "build": "marp --html --input-dir slides/ --output dist/",
-    "pdf": "marp --html --pdf --input-dir slides/ --output dist/"
+    "tikz": "bash scripts/build-tikz.sh",
+    "dev": "pnpm tikz && marp --watch --html --input-dir slides/",
+    "build": "pnpm tikz && marp --html --input-dir slides/ --output dist/",
+    "pdf": "pnpm tikz && marp --html --pdf --input-dir slides/ --output dist/"
   },
   "packageManager": "pnpm@10.13.1",
   "devDependencies": {

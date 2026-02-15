@@ -55,6 +55,16 @@ $$
 
 ---
 
+## 可換図式の例
+
+TikZ で描いた可換図式を埋め込む：
+
+![可換図式](./images/sample-diagram.svg)
+
+$$f \circ g = k \circ h$$
+
+---
+
 ## まとめ
 
 - 数列の極限は $\varepsilon$-$N$ 論法で定義される
